@@ -1,0 +1,262 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="TaskFlow - Organize your tasks, track your progress, and boost your productivity.">
+
+    <title>TaskFlow - My Todo List</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+
+        <header>
+
+            <div class="logo">✦ TaskFlow</div>
+
+            <p>Your productivity starts here.</p>
+
+        </header>
+
+
+        <!-- WELCOME SECTION -->
+
+        <section class="welcome">
+
+            <div class="welcome-content">
+
+                <span class="welcome-tag">
+                    YOUR PRODUCTIVITY SPACE ✨
+                </span>
+
+                <h1>Make today count!</h1>
+
+                <p>
+                    Stay focused, organize your work,
+                    and achieve your goals.
+                </p>
+
+                <div class="date-display" id="currentDate"></div>
+
+            </div>
+
+            <div class="welcome-decoration">✦</div>
+
+        </section>
+
+
+        <!-- STATISTICS SECTION -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <span>Total Tasks</span>
+
+                <h2 id="totalTasks">0</h2>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>Pending</span>
+
+                <h2 id="pendingTasks">0</h2>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>Completed</span>
+
+                <h2 id="completedTasks">0</h2>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROGRESS SECTION -->
+
+        <section class="progress-section">
+
+            <div class="progress-heading">
+
+                <div>
+
+                    <h3>Your Progress</h3>
+
+                    <p>Keep going! Every task counts.</p>
+
+                </div>
+
+                <strong id="progressPercent">0%</strong>
+
+            </div>
+
+
+            <div
+                class="progress-track"
+                role="progressbar"
+                aria-label="Task completion progress"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+            >
+
+                <div id="progressBar"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TASK SECTION -->
+
+        <section class="task-section">
+
+            <h2>My Tasks</h2>
+
+
+            <!-- ADD TASK FORM -->
+
+            <form id="taskForm">
+
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="What do you need to do?"
+                    maxlength="150"
+                    autocomplete="off"
+                    aria-label="Enter your task"
+                    required
+                >
+
+
+                <select
+                    id="priority"
+                    aria-label="Select task priority"
+                >
+
+                    <option value="Low">Low</option>
+
+                    <option value="Medium" selected>
+                        Medium
+                    </option>
+
+                    <option value="High">High</option>
+
+                </select>
+
+
+                <button type="submit" id="submitBtn">
+
+                    + Add Task
+
+                </button>
+
+            </form>
+
+
+            <!-- SEARCH -->
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔍 Search your tasks..."
+                autocomplete="off"
+                aria-label="Search tasks"
+            >
+
+
+            <!-- FILTER BUTTONS -->
+
+            <div class="filters">
+
+                <button
+                    type="button"
+                    class="filter active"
+                    data-filter="all"
+                    aria-pressed="true"
+                >
+                    All
+                </button>
+
+
+                <button
+                    type="button"
+                    class="filter"
+                    data-filter="pending"
+                    aria-pressed="false"
+                >
+                    Pending
+                </button>
+
+
+                <button
+                    type="button"
+                    class="filter"
+                    data-filter="completed"
+                    aria-pressed="false"
+                >
+                    Completed
+                </button>
+
+            </div>
+
+
+            <!-- TASK LIST -->
+
+            <div id="taskList"></div>
+
+
+            <!-- EMPTY MESSAGE -->
+
+            <p id="emptyMessage" role="status">
+                No tasks yet. Add your first task!
+            </p>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <p>✦ Designed for productivity. Made with ❤️</p>
+
+        </footer>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
